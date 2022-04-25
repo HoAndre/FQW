@@ -4,7 +4,7 @@ app=Flask(__name__)
 def get_prediction(params):
     model=tf.keras.models.load_model('DNN_model')
     y_pred=model.predict(params)
-    return f'Спрогнозированное cоотношение матрица-наполнитель для введенных параметров: {y_pred}'
+    return f'Рекомендуемое cоотношение матрица-наполнитель для введенных параметров: {y_pred}'
 @app.route('/', methods=['post', 'get'])
 def processing():
     message = ''
